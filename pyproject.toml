@@ -1,0 +1,16 @@
+[project]
+name = "20250506-ice-cream-dataops"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "maruyan",email = "7115497+hmaruyama@users.noreply.github.com"}
+]
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "cognite-toolkit (==0.4.23)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
