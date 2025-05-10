@@ -45,6 +45,41 @@ built_resources:
       hash: 4424ed7c
     kind: Space
     destination: build/data_models/2.oee_timeseries.space.yaml
+  transformations:
+  - identifier:
+      externalId: contextualize_ts_assets
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.Transformation.yaml
+      hash: 033d0b19
+    kind: Transformation
+    destination: build/transformations/1.contextualize_ts_assets.Transformation.yaml
+    extra_sources:
+    - path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.Transformation.sql
+      hash: 5bc0c92b
+  - identifier:
+      externalId: contextualize_ts_assets
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/contextualize_ts_assets.schedule.yaml
+      hash: ce534223
+    kind: Schedule
+    destination: build/transformations/3.contextualize_ts_assets.schedule.yaml
+  - identifier:
+      externalId: create_asset_hierarchy
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.Transformation.yaml
+      hash: 297a0ef8
+    kind: Transformation
+    destination: build/transformations/4.create_asset_hierarchy.Transformation.yaml
+    extra_sources:
+    - path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.Transformation.sql
+      hash: 144ab598
+  - identifier:
+      externalId: create_asset_hierarchy
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/transformations/create_asset_hierarchy.schedule.yaml
+      hash: 20af3b16
+    kind: Schedule
+    destination: build/transformations/6.create_asset_hierarchy.schedule.yaml
   hosted_extractors:
   - identifier:
       externalId: ICAPI Time series
@@ -140,15 +175,16 @@ read_modules:
   - auth
 - dir: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api
   resource_directories:
-  - auth
-  - functions
-  - hosted_extractors
   - data_models
   - raw
+  - functions
   - data_sets
+  - auth
+  - transformations
+  - hosted_extractors
 - dir: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee
   resource_directories:
-  - auth
-  - data_sets
-  - functions
   - data_models
+  - data_sets
+  - auth
+  - functions
