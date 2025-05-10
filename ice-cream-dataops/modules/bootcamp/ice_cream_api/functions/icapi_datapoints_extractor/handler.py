@@ -85,6 +85,14 @@ def report_ext_pipe(client: CogniteClient, status, message=None):
     client.extraction_pipelines.runs.create(run=ext_pipe_run)
 
 def handle(client: CogniteClient = None, data=None):
+
+    creds = client.config.credentials
+
+    print("=== CDF client credentials ===")
+    print("Type:", type(creds))
+    print("Client ID:", getattr(creds, "client_id", "N/A"))
+    print("Token URL:", getattr(creds, "token_url", "N/A"))
+
     report_ext_pipe(client, "seen")
     
     sites = None
