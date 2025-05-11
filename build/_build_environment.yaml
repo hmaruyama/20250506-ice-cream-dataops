@@ -88,6 +88,29 @@ built_resources:
       hash: 20af3b16
     kind: Schedule
     destination: build/transformations/6.create_asset_hierarchy.schedule.yaml
+  workflows:
+  - identifier:
+      externalId: wf_icapi_data_pipeline
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/workflows/wf_icapi_data_pipeline.WorkFlow.yaml
+      hash: 5ed31977
+    kind: Workflow
+    destination: build/workflows/1.wf_icapi_data_pipeline.WorkFlow.yaml
+  - identifier:
+      workflowExternalId: wf_icapi_data_pipeline
+      version: '1'
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/workflows/wf_icapi_data_pipeline.WorkFlowVersion.yaml
+      hash: 6512f7f5
+    kind: WorkflowVersion
+    destination: build/workflows/2.wf_icapi_data_pipeline.WorkFlowVersion.yaml
+  - identifier:
+      externalId: icapi_trigger
+    source:
+      path: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api/workflows/wf_icapi_data_pipeline.WorkflowTrigger.yaml
+      hash: 4bb02ead
+    kind: WorkflowTrigger
+    destination: build/workflows/3.wf_icapi_data_pipeline.WorkflowTrigger.yaml
   hosted_extractors:
   - identifier:
       externalId: ICAPI Time series
@@ -221,17 +244,18 @@ read_modules:
   - auth
 - dir: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/ice_cream_api
   resource_directories:
-  - data_sets
-  - transformations
-  - hosted_extractors
+  - workflows
   - data_models
-  - raw
+  - hosted_extractors
   - functions
-  - auth
+  - transformations
   - extraction_pipelines
+  - auth
+  - data_sets
+  - raw
 - dir: /Users/hikarumaruyama/src/localonly/workspace/20250506-ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee
   resource_directories:
   - functions
-  - auth
   - data_models
+  - auth
   - data_sets
